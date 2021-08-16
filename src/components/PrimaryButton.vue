@@ -1,5 +1,5 @@
 <template>
-  <button>{{buttonName}}</button>
+    <button>{{buttonName}}</button>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style>
-    button{
+button {
     padding: 1.2rem 3rem;
     font-size: 20px;
     font-weight: 700;
@@ -19,5 +19,12 @@ export default {
     background: #FF4D1C;
     color: #fff;
     transition: all .5s;
+}
+
+@media screen and (max-width: 768px) {
+  button{
+    padding: 1rem 1rem;
+    font-size: 18px;
   }
+}
 </style>

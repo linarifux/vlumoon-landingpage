@@ -1,20 +1,14 @@
 <template>
-    <div class="my-nav">
-        <Navbar />
-    </div>
-    <div class="my-honme">
-        <Home />
-    </div>
-    <div class="container">
-        <Features :iconList="myList" />
-        <About />
-        <Choose :iconList="myList" />
-        <Products :products="products" />
-    </div>
+<div class="nav-bar">
+    <Navbar />
+</div>
+    <Home />
+    <Features :iconList="myList" />
+    <About />
+    <Choose :iconList="myList" />
+    <Products :products="products" />
     <Newsletter />
-    <div class="container">
-        <Testimonial />
-    </div>
+    <Testimonial />
     <Contact />
     <Footer />
 </template>
@@ -95,22 +89,13 @@ body {
     background: #FFEBE2;
 }
 
-a {
-    text-decoration: none;
-    color: #000;
-}
-
-li {
-    list-style: none;
-}
-
-.container {
-    max-width: 60vw;
-    margin: 2rem auto;
-}
-
-.my-honme{
-    background-image: url('https://i.postimg.cc/2yr6CdsW/banner-1.png');
-    background-size: cover;
+.nav-bar{
+    position: fixed;
+    background: #FFEBE2;
+    width: 100%;
+    height: 80px;
+    z-index: 999;
+    align-items: center;
+    display: flex;
 }
 </style>

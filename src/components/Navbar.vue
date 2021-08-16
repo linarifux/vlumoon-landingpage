@@ -1,18 +1,19 @@
 <template>
-    <div class="nav-menu">
-        <div class="logo-area">
-            <a href="#">Logo</a>
+    <div class="nav-items">
+        <div class="logo">
+            <p>LOGO</p>
         </div>
-        <div class="menu-area">
-            <ul>
-                <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="/">Home</a></li>
-                <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#features">Features</a></li>
-                <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#about">About</a></li>
-                <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#product">Product</a></li>
-                <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#testimonial">Testimonial</a></li>
-                <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="mobile-menu" v-if="isMobileView" @click="toggleMenu">
+            <fa icon="bars" class="bars-icon" />
         </div>
+        <ul v-bind:class="{active: isMenuActive}">
+            <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="/">Home</a></li>
+            <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#features">Features</a></li>
+            <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#about">About</a></li>
+            <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#product">Product</a></li>
+            <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#testimonial">Testimonial</a></li>
+            <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="#contact">Contact</a></li>
+        </ul>
     </div>
 </template>
 
@@ -20,43 +21,73 @@
 export default {
     data() {
         return {
+            isMobileView: true,
+            isMenuActive: false
         }
     },
     methods: {
-        clickHandler(){
+        toggleMenu(){
+            this.isMenuActive = !this.isMenuActive
         }
     },
+
 }
 </script>
 
-<style>
-.active{
-    border-bottom: 1px solid black;
-}
-.nav-menu {
-    position: fixed;
+<style scoped>
+.nav-items{
+    width: 60vw;
     display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
     align-items: center;
-    gap: 30rem;
-    top: 0;
-    padding: 2rem 0;
-    background: #FFEBE2;
-    width: 100%;
-    z-index: 10000;
 }
-
-.logo-area {
+.logo{
     font-size: 20px;
-    margin-left: 20vw
 }
-
-.menu-area ul {
+ul {
+    list-style: none;
     display: flex;
 }
 
-.menu-area>ul>li a {
-    margin: 0 .5rem;
-    font-size: 18px;
-    padding: .5rem .5rem;
+ul>li {
+    margin: 0 1rem;
+}
+
+a {
+    padding: .5rem 0;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    margin: 0 1rem;
+}
+.bars-icon{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .bars-icon{
+        display: block;
+    }
+    ul{
+        display: none;
+    }
+    .active{
+        position: absolute;
+        left: 0;
+        top: 5rem;
+        display: block;
+        width: 100%;
+        background: #fff;
+    }
+    .active li{
+        background: #FFE4D8;
+        width: 100%;
+        margin-left: 0;
+        margin: .5rem auto;
+    
+    }
 }
 </style>

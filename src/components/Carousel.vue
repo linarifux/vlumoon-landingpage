@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style>
-    .carousel{
+    .carousel-slide{
         width: 100%;
         margin: 0 auto;
         position: relative;

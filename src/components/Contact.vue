@@ -32,11 +32,12 @@ export default {
 </script>
 
 <style>
-.contact-page{
+.contact-page {
     background: #FAF6F4;
-    padding: 4rem 0;
-
+    padding: 2rem 0;
+    margin: 2rem 0;
 }
+
 .contact-area {
     max-width: 60vw;
     margin: 0 auto;
@@ -44,11 +45,12 @@ export default {
 }
 
 .contact-title {
-    margin: 5rem 0;
+    margin: 2rem 0;
 }
 
 .contact-title h1 {
     margin: .5rem 0;
+    font-size: 50px;
 }
 
 .contact-title p {
@@ -57,12 +59,12 @@ export default {
 
 .contact-content {
     display: flex;
-    gap: 10rem;
+    justify-content: space-between;
 }
 
 .contact-form input {
     display: block;
-    width: 40rem;
+    width: 35vw;
     padding: .5rem 1rem;
     margin: 1rem 0;
     border: none;
@@ -71,8 +73,9 @@ export default {
     outline: none;
     background: none;
 }
-.contact-form textarea{
-    width: 40rem;
+
+.contact-form textarea {
+    width: 35vw;
     height: 10rem;
     padding: .5rem 1rem;
     margin: 1rem 0;
@@ -82,7 +85,8 @@ export default {
     outline: none;
     background: none;
 }
-.contact-image{
+
+.contact-image {
     display: block;
     align-items: center;
 }
@@ -91,7 +95,47 @@ export default {
     height: 300px;
 }
 
-.contact-form .primary-btn button:hover{
+.contact-form .primary-btn button:hover {
     background: #d13c12;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-area {
+        max-width: 90vw;
+    }
+    .contact-title {
+        text-align: center;
+    }
+    .contact-title h1 {
+        font-size: 30px;
+    }
+    .contact-title p {
+        width: 100%;
+    }
+    .contact-content {
+        display: block;
+    }
+    .contact-form input {
+        display: block;
+        width: 90vw;
+    }
+    .contact-form textarea {
+        width: 90vw;
+    }
+    .contact-image {
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-image img {
+        height: 150px;
+    }
+    .contact-form .primary-btn{
+        text-align: center;
+    }
+    .contact-form .primary-btn button:hover {
+        background: #d13c12;
+    }
+
 }
 </style>
