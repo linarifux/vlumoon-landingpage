@@ -68,8 +68,8 @@ export default {
     margin: 0 auto;
 }
 .features {
-    margin: 2rem auto;
-    padding: 2rem 0;
+    margin-top: 5rem;
+    padding: 5rem 0;
 }
 
 .title {

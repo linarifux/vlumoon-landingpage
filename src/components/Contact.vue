@@ -103,6 +103,10 @@ export default {
     .contact-area {
         max-width: 90vw;
     }
+    .contact-page{
+        margin: 5rem 0;
+        padding: 5rem 0;
+    }
     .contact-title {
         text-align: center;
     }

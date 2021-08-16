@@ -63,6 +63,10 @@ export default {
     max-width: 90vw;
     margin: 0 auto;
 }
+.products-area{
+    margin: 5rem 0;
+    padding: 5rem 0;
+}
 .single-product {
     display: block;
 }

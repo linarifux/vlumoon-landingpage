@@ -3,8 +3,9 @@
         <div class="logo">
             <p>LOGO</p>
         </div>
-        <div class="mobile-menu" v-if="isMobileView" @click="toggleMenu">
-            <fa icon="bars" class="bars-icon" />
+        <div class="mobile-menu" @click="toggleMenu">
+            <fa icon="bars" class="bars-icon" v-if="!isMenuActive"/>
+            <fa icon="times" class="times-icon" v-if="isMenuActive" />
         </div>
         <ul v-bind:class="{active: isMenuActive}">
             <li @click="clickHandler" v-bind:class="{active: isActive}"><a href="/">Home</a></li>
@@ -36,7 +37,7 @@ export default {
 
 <style scoped>
 .nav-items{
-    width: 60vw;
+    width: 80vw;
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
@@ -68,11 +69,16 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    .nav-items{
+        width: 90vw;
+    }
     .bars-icon{
         display: block;
+        transition: .5s;
     }
     ul{
         display: none;
+        transition: .5s ease-in-out;
     }
     .active{
         position: absolute;
@@ -81,13 +87,21 @@ a {
         display: block;
         width: 100%;
         background: #fff;
+        transition: .5s ease-in-out;
     }
     .active li{
-        background: #FFE4D8;
+        background: #000000;
         width: 100%;
-        margin-left: 0;
-        margin: .5rem auto;
-    
+        color: #fff;
+        transition: .5s;
+        margin: 0 auto;
+        border-bottom: 1px solid #fff;
+    }   
+    a{
+        color: #fff;
+    }
+    .mobile-menu{
+        font-size: 20px;
     }
 }
 </style>

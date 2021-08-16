@@ -105,8 +105,7 @@ export default {
     }
     .about {
         display: block;
-        margin: 0;
-        padding: 0;
+        padding: 5rem 0;
     }
     .about-title h1 {
         font-size: 30px;
