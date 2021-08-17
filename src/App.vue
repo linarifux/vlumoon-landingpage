@@ -1,4 +1,5 @@
 <template>
+<SignUpModal v-if="showModal" @closeModal="closeModal"/>
 <div class="nav-bar">
     <Navbar />
 </div>
@@ -24,6 +25,7 @@ import Newsletter from './components/Newsletter.vue'
 import Testimonial from './components/Testimonial.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
+import SignUpModal from './components/SignUpModal.vue'
 
 export default {
     name: 'App',
@@ -38,9 +40,21 @@ export default {
         Testimonial,
         Contact,
         Footer,
+        SignUpModal
+    },
+    mounted() {
+        setTimeout(()=>{
+            this.showModal = true
+        },5000)
+    },
+    methods: {
+        closeModal(){
+            this.showModal = false
+        }
     },
     data() {
         return {
+            showModal: false,
             myList: [{
                     id: 1,
                     icon: 'wrench',
